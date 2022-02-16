@@ -1,12 +1,16 @@
 function didIWin(givenNumber) {
     if (givenNumber < 22) { 
         alert("Plus grand")
+        return false
     }
     else if (givenNumber > 22) { 
         alert("Plus petit")
+        return false
     }
-    else 
+    else {
         alert("Bravo! You guessed the number.")  
+        return true
+    }    
 }
 
 function askNumber() {
@@ -15,8 +19,12 @@ function askNumber() {
 }
 
 function gamePlay() {
-    let givenNumber = askNumber()
-    didIWin(givenNumber)
+    let a
+
+    do {
+        a = askNumber()
+    }
+    while (didIWin(a) === false)
 }
 
 gamePlay()
